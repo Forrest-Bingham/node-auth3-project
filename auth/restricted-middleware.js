@@ -34,7 +34,8 @@ module.exports = (req, res, next) => {
           //token is not valid
           res.status(401).json({error: "unable to get token"})
         } else {
-          req.user = decodedToken.user;
+            console.log(decodedToken);
+          req.department = decodedToken.department;
           next();
         }
     })
